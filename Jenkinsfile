@@ -57,7 +57,7 @@ pipeline {
         // }
 
 
-        /* stage('Nexus Artifact Upload'){
+        stage('Nexus Artifact Upload'){
             steps{
                 script{
                     nexusArtifactUploader(
@@ -87,7 +87,7 @@ pipeline {
                     build job: 'frontend-deploy', parameters: params, wait: false
                 }
             }
-        } */
+        }
     }
     post { 
         always { 
