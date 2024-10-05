@@ -10,7 +10,6 @@ pipeline {
     environment{
         def appVersion = '' //variable declaration
         nexusUrl = 'nexus.narendra.shop:8081'
-
     }
     stages {
         stage('read the version'){
