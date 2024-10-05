@@ -10,8 +10,7 @@ pipeline {
     environment{
         def appVersion = '' //variable declaration
         nexusUrl = 'nexus.narendra.shop:8081'
-        region = "us-east-1"
-        account_id = "315069654700"
+
     }
     stages {
         stage('read the version'){
@@ -78,16 +77,16 @@ pipeline {
                 }
             }
         }
-        stage('Deploy'){
-            steps{
-                script{
-                    def params = [
-                        string(name: 'appVersion', value: "${appVersion}")
-                    ]
-                    build job: 'frontend-deploy', parameters: params, wait: false
-                }
-            }
-        }
+        // stage('Deploy'){
+        //     steps{
+        //         script{
+        //             def params = [
+        //                 string(name: 'appVersion', value: "${appVersion}")
+        //             ]
+        //             build job: 'frontend-deploy', parameters: params, wait: false
+        //         }
+        //     }
+        // }
     }
     post { 
         always { 
